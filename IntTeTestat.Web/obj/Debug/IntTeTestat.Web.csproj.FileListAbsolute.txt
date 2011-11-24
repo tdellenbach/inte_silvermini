@@ -1,0 +1,5 @@
+C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat.Web\bin\IntTeTestat.Web.dll
+C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat.Web\bin\IntTeTestat.Web.pdb
+C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat.Web\obj\Debug\IntTeTestat.Web.dll
+C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat.Web\obj\Debug\IntTeTestat.Web.pdb

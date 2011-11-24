@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1701/GuessService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GuessService_Conntect_InputMessage">
+    <wsdl:part name="parameters" element="Conntect" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_AddName_InputMessage">
+    <wsdl:part name="parameters" element="AddName" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_Guess_InputMessage">
+    <wsdl:part name="parameters" element="Guess" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_QuitConnect_InputMessage">
+    <wsdl:part name="parameters" element="QuitConnect" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_StartGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="StartGame" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_GameOver_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="GameOver" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_ConnectCanceled_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="ConnectCanceled" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_PlayerGuess_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="PlayerGuess" />
+  </wsdl:message>
+  <wsdl:portType name="GuessService">
+    <wsdl:operation name="Conntect">
+      <wsdl:input wsaw:Action="urn:GuessService/Conntect" message="GuessService_Conntect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddName">
+      <wsdl:input wsaw:Action="urn:GuessService/AddName" message="GuessService_AddName_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Guess">
+      <wsdl:input wsaw:Action="urn:GuessService/Guess" message="GuessService_Guess_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuitConnect">
+      <wsdl:input wsaw:Action="urn:GuessService/QuitConnect" message="GuessService_QuitConnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <wsdl:output wsaw:Action="urn:GuessService/StartGame" message="GuessService_StartGame_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GameOver">
+      <wsdl:output wsaw:Action="urn:GuessService/GameOver" message="GuessService_GameOver_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectCanceled">
+      <wsdl:output wsaw:Action="urn:GuessService/ConnectCanceled" message="GuessService_ConnectCanceled_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerGuess">
+      <wsdl:output wsaw:Action="urn:GuessService/PlayerGuess" message="GuessService_PlayerGuess_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

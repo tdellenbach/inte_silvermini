@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6bd7b908-0381-4499-ad5e-5823240a3bbf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1701/GuessService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GuessService.disco" MetadataType="Disco" ID="1516c395-9245-4fad-a111-44248e7e7286" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?disco" />
+    <MetadataFile FileName="GuessService1.wsdl" MetadataType="Wsdl" ID="3667a13b-79fb-4dc3-800b-f9c627bf0e98" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="GuessService1.xsd" MetadataType="Schema" ID="6811c84a-cb50-4cea-9937-a61b360e0665" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GuessService3.xsd" MetadataType="Schema" ID="af2a7e5c-e478-4eec-849b-410ed450e2a2" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GuessService.xsd" MetadataType="Schema" ID="fe94dbbf-7aad-4385-8ecf-64d6e0bd49f3" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GuessService.wsdl" MetadataType="Wsdl" ID="eeb04d6b-9b9c-4f34-8654-9a11a3f4d3dd" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?wsdl" />
+    <MetadataFile FileName="GuessService2.xsd" MetadataType="Schema" ID="8425550d-585f-4e45-852e-2d2c49db6bbc" SourceId="1" SourceUrl="http://localhost:1701/GuessService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
