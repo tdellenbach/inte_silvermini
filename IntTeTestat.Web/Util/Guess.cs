@@ -11,28 +11,25 @@ namespace IntTeTestat.Web.Util
         Others
     }
 
-
     [Serializable]
     public class Guess
     {
 
-        private Int32 _guess;
+        private Int32 _guessValue;
 
         private string _playerName;
 
-        private GuessTipp _guessTip;
-
-        public Guess(Int32 guess, string playerName)
+        public Guess(Int32 guessValue, string playerName)
         {
-            this._guess = guess;
+            this._guessValue = guessValue;
             this._playerName = playerName;
         }
 
         [DataMember]
-        public Int32 Guess
+        public Int32 GuessValue
         {
-            set { this._guess = value; }
-            get { return this._guess; }
+            set { this._guessValue = value; }
+            get { return this._guessValue; }
         }
 
         [DataMember]
@@ -42,18 +39,17 @@ namespace IntTeTestat.Web.Util
             get { return this._playerName; }
         }
 
-        [DataMember]
         public GuessTipp GuessTip(Int32 target)
         {
-            if (this._guess < target)
+            if (this._guessValue < target)
             {
                 return GuessTipp.TooLow;
             }
-            else if (this._guess > target)
+            else if (this._guessValue > target)
             {
                 return GuessTipp.TooHigh;
             }
-            else if (this._guess == target)
+            else if (this._guessValue == target)
             {
                 return GuessTipp.Correct;
             }
@@ -64,4 +60,5 @@ namespace IntTeTestat.Web.Util
         }
 
     };
+
 }

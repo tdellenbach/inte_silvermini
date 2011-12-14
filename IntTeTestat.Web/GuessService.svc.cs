@@ -28,18 +28,7 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void AddName(string name)
         {
-            players.AddLast(name);
 
-            if (players.Count == 3)
-            {
-                List<string> list = new List<string>();
-                foreach(string player in players)
-                {
-                    list.Add(player);
-                }
-                players.Clear();
-                _client.StartGame(list, "playerName??? gameName???");
-            }
         }
 
         [OperationContract(IsOneWay = true)]
@@ -53,6 +42,7 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void QuitConnect()
         { 
+
         }
     }
 
