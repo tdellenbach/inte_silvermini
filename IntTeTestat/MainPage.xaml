@@ -11,7 +11,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Border BorderBrush="#FF3F6DA6" BorderThickness="2,2,2,0" CornerRadius="0,0,0,0">
-            <Image Margin="4" Name="image1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Source="/IntTeTestat;component/Images/HsrLogo.jpg"/>
+            <Image Margin="4" Name="hsrImage" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Source="/IntTeTestat;component/Images/HsrLogo.jpg"/>
         </Border>
         <Border BorderThickness="2,0,2,2" BorderBrush="#FF3F6DA6" CornerRadius="0,0,0,0" Grid.Row="1">
             <sdk:Frame x:Name="ContentFrame" Margin="4">                
@@ -21,6 +21,6 @@
                     </sdk:UriMapper>
                 </sdk:Frame.UriMapper>
             </sdk:Frame>
-        </Border>        
+        </Border>
     </Grid>
 </UserControl>

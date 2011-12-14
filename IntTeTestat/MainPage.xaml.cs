@@ -13,21 +13,27 @@ using System.Windows.Shapes;
 using System.ServiceModel;
 using IntTeTestat.GuessServiceReference;
 using IntTeTestat.ViewModel;
+using System.Threading;
 
 namespace IntTeTestat
 {
     public partial class MainPage : UserControl
     {
+
+        WelcomePage welcomePage = new WelcomePage();
+
         public MainPage()
         {
             InitializeComponent();
             WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
+            ContentFrame.Content = welcomePage;
         }
-
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
+            
         }
+
     }
 
 

@@ -15,6 +15,8 @@ namespace IntTeTestat.Web
     public class GuessService
     {
         private IGuessService _client;
+
+        private LinkedList<string> players = new LinkedList<string>();
       
         [OperationContract(IsOneWay = true)]
         public void Conntect()
@@ -26,12 +28,25 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void AddName(string name)
         {
+            players.AddLast(name);
+
+            if (players.Count == 3)
+            {
+                List<string> list = new List<string>();
+                foreach(string player in players)
+                {
+                    list.Add(player);
+                }
+                players.Clear();
+                _client.StartGame(list, "playerName??? gameName???");
+            }
         }
 
         [OperationContract(IsOneWay = true)]
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void Guess(Int32 value)
         {
+            
         }
 
         [OperationContract(IsOneWay = true)]
@@ -56,4 +71,5 @@ namespace IntTeTestat.Web
         [OperationContract(IsOneWay = true)]
         void PlayerGuess(Guess guess);
     }
+
 }
