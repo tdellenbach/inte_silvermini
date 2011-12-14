@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 using System.ServiceModel;
 using IntTeTestat.GuessServiceReference;
 using IntTeTestat.ViewModel;
@@ -14,31 +16,47 @@ namespace IntTeTestat
         {
             InitializeComponent();
 
-            WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
-            WebContext.Current.GuessServiceClient.GameOverReceived += OnGameOverReceived;
-            WebContext.Current.GuessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
+            ContentFrame.DataContext = GameModelInstance;
 
-            this._gameModel = new GameModel();
-            ContentFrame.DataContext = this._gameModel;
-            ContentFrame.Content = new WelcomePage();
+            GuessServiceClient guessServiceClient = WebContext.Current.GuessServiceClient;
+            guessServiceClient.StartGameReceived += OnStartGameReceived;
+            guessServiceClient.GameOverReceived += OnGameOverReceived;
+            guessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
+
+            ContentFrame.Navigate(new Uri("/WelcomePage", UriKind.Relative));
         }
-       
+
+        private GameModel GameModelInstance
+        {
+            set { this._gameModel = value; }
+            get
+            {
+                if (this._gameModel == null)
+                {
+                    this._gameModel = new GameModel();
+                }
+                return this._gameModel;
+            }
+        }
+
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs eventArgs)
         {
             _gameModel.GameName = eventArgs.playerName;
             _gameModel.Players = eventArgs.players;
-
-            ContentFrame.Content = new GamePage();
         }
 
         private void OnGameOverReceived(object sender, GameOverReceivedEventArgs eventArgs)
         {
-            ContentFrame.Content = new GameOverPage();
+
         }
 
         private void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs eventArgs)
         {
             _gameModel.Guesses.Add(eventArgs.guess);
+        }
+
+        private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
+        {
         }
 
     }

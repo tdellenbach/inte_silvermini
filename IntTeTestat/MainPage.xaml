@@ -14,7 +14,7 @@
             <Image Margin="4" Name="hsrImage" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Source="/IntTeTestat;component/Images/HsrLogo.jpg"/>
         </Border>
         <Border BorderThickness="2,0,2,2" BorderBrush="#FF3F6DA6" CornerRadius="0,0,0,0" Grid.Row="1">
-            <sdk:Frame x:Name="ContentFrame" Margin="4">                
+            <sdk:Frame x:Name="ContentFrame" Margin="4" Navigated="ContentFrame_Navigated">                
                 <sdk:Frame.UriMapper>
                     <sdk:UriMapper>
                         <sdk:UriMapping Uri="/{pageName}" MappedUri="/{pageName}.xaml"/>
