@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
@@ -16,8 +15,14 @@ namespace IntTeTestat.Web
     {
         private IGuessService _client;
 
-        private LinkedList<string> players = new LinkedList<string>();
-      
+        private Player _currentPlayer;
+
+        private GuessGame _currentGuessGame;
+
+        private List<Player> _players = new List<Player>();
+
+        private static List<GuessGame> _guessGames = new List<GuessGame>();
+
         [OperationContract(IsOneWay = true)]
         public void Conntect()
         {
@@ -28,7 +33,27 @@ namespace IntTeTestat.Web
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void AddName(string name)
         {
+            this._currentPlayer = new Player(name, _client);
+            this._players.Add(this._currentPlayer);
 
+            if (this._players.Count >= GuessGame._maxPlayers)
+            {
+                List<Player> joiningPlayers = this._players.GetRange(0, GuessGame._maxPlayers);
+                this._players.RemoveRange(0, joiningPlayers.Count);
+                this._currentGuessGame = new GuessGame(joiningPlayers);
+                GuessService._guessGames.Add(this._currentGuessGame);
+                List<Player> players = this._currentGuessGame.Players;
+                List<string> playerNames = new List<string>();
+                foreach(Player player in players)
+                {
+                    playerNames.Add(player.Name);
+                }
+                foreach (Player player in players)
+                {
+                    player.GuessService.StartGame(playerNames, player.Name);
+                    player.GuessGame = this._currentGuessGame;
+                }
+            }
         }
 
         [OperationContract(IsOneWay = true)]
@@ -41,8 +66,13 @@ namespace IntTeTestat.Web
         [OperationContract(IsOneWay = true)]
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void QuitConnect()
-        { 
-
+        {
+            if (this._currentPlayer.GuessGame != null)
+            {
+                this._currentPlayer.GuessGame.Players.Remove(this._currentPlayer);
+            }
+            this._players.Remove(this._currentPlayer);
+            _client.ConnectCanceled();
         }
     }
 

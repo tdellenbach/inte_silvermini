@@ -180,3 +180,4 @@ C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTesta
 C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat\obj\Debug\WelcomePage.g.i.cs
 C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat\obj\Debug\WaitingPage.g.i.cs
 C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat\obj\Debug\GamePage.g.i.cs
+C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat\obj\Debug\GameOverPage.g.i.cs

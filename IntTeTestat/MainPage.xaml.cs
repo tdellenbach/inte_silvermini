@@ -1,42 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 using System.ServiceModel;
 using IntTeTestat.GuessServiceReference;
 using IntTeTestat.ViewModel;
-using System.Threading;
 
 namespace IntTeTestat
 {
     public partial class MainPage : UserControl
     {
 
-        WelcomePage welcomePage = new WelcomePage();
+        private GameModel _gameModel;
 
         public MainPage()
         {
             InitializeComponent();
+
             WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
-            ContentFrame.Content = welcomePage;
+            WebContext.Current.GuessServiceClient.GameOverReceived += OnGameOverReceived;
+            WebContext.Current.GuessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
+
+            this._gameModel = new GameModel();
+            ContentFrame.DataContext = this._gameModel;
+            ContentFrame.Content = new WelcomePage();
         }
        
-        private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
+        private void OnStartGameReceived(object sender, StartGameReceivedEventArgs eventArgs)
         {
-            
+            _gameModel.GameName = eventArgs.playerName;
+            _gameModel.Players = eventArgs.players;
+
+            ContentFrame.Content = new GamePage();
+        }
+
+        private void OnGameOverReceived(object sender, GameOverReceivedEventArgs eventArgs)
+        {
+            ContentFrame.Content = new GameOverPage();
+        }
+
+        private void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs eventArgs)
+        {
+            _gameModel.Guesses.Add(eventArgs.guess);
         }
 
     }
-
-
 
     /// <summary>
     /// Add GuessServiceClient to WebContext

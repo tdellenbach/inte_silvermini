@@ -7,7 +7,7 @@ namespace IntTeTestat.Web.Util
     {
         private List<Player> _players;
 
-        private Int32 _maxPlayers = 2;
+        public const Int32 _maxPlayers = 2;
 
         private Int32 _lowerBound = 1;
 
