@@ -1,0 +1,247 @@
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   .gitignore
+#	deleted:    IntTeTestat/Bin/Debug/ar/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ar/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ar/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/bg/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/bg/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/bg/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ca/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ca/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ca/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/cs/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/cs/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/cs/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/da/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/da/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/da/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/de/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/el/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/el/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/el/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/es/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/et/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/et/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/et/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/eu/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/eu/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/eu/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fi/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fi/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fi/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/fr/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/he/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/he/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/he/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/hr/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/hr/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/hr/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/hu/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/hu/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/hu/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/id/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/id/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/id/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/it/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ja/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ko/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/lt/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/lt/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/lt/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/lv/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/lv/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/lv/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ms/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ms/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ms/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/nl/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/nl/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/nl/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/no/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/no/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/no/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pl/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pl/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pl/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pt-BR/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pt-BR/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pt-BR/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pt/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pt/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/pt/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ro/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ro/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ro/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/ru/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sk/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sk/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sk/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sl/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sl/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sl/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sr-Cyrl-CS/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sr-Cyrl-CS/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sr-Cyrl-CS/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sr-Latn-CS/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sr-Latn-CS/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sr-Latn-CS/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sv/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sv/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/sv/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/th/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/th/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/th/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/tr/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/tr/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/tr/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/uk/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/uk/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/uk/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/vi/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/vi/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/vi/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hans/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.ComponentModel.DataAnnotations.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.ServiceModel.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.ServiceModel.PollingDuplex.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.ServiceModel.Web.Extensions.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.Windows.Controls.Data.Input.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.Windows.Controls.Navigation.resources.dll
+#	deleted:    IntTeTestat/Bin/Debug/zh-Hant/System.Windows.Controls.resources.dll
+#	deleted:    IntTeTestat/obj/Debug/App.g.cs
+#	deleted:    IntTeTestat/obj/Debug/App.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/ChildWindow1.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+#	deleted:    IntTeTestat/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	deleted:    IntTeTestat/obj/Debug/GameOverPage.g.cs
+#	deleted:    IntTeTestat/obj/Debug/GameOverPage.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/GamePage.g.cs
+#	deleted:    IntTeTestat/obj/Debug/GamePage.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/GuessGame.g.cs
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.RiaClientRefs.txt
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.RiaFiles.txt
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.RiaLinks.txt
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.RiaServerRefs.txt
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.RiaSourceFiles.txt
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.csproj.FileListAbsolute.txt
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.dll
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.g.resources
+#	deleted:    IntTeTestat/obj/Debug/IntTeTestat.pdb
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/IntTeTestat.RiaClientRefs.txt
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/IntTeTestat.RiaFiles.txt
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/IntTeTestat.RiaLinks.txt
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/IntTeTestat.RiaServerRefs.txt
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/IntTeTestat.RiaSourceFiles.txt
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/Sources/IntTeTestat.Web.g.cs
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/TempPE/IntTeTestat.Web.dll
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/TempPE/IntTeTestat.Web.pdb
+#	deleted:    IntTeTestat/obj/Debug/LiveIntellisense/TempPE/IntTeTestat.g.dll
+#	deleted:    IntTeTestat/obj/Debug/MainPage.g.cs
+#	deleted:    IntTeTestat/obj/Debug/MainPage.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/Page1.g.cs
+#	deleted:    IntTeTestat/obj/Debug/ResolveAssemblyReference.cache
+#	deleted:    IntTeTestat/obj/Debug/SilverlightControl1.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/TempPE/Service References.GuessServiceReference.Reference.cs.dll
+#	deleted:    IntTeTestat/obj/Debug/Test.g.cs
+#	deleted:    IntTeTestat/obj/Debug/WaitingPage.g.cs
+#	deleted:    IntTeTestat/obj/Debug/WaitingPage.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/WelcomePage.g.cs
+#	deleted:    IntTeTestat/obj/Debug/WelcomePage.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/WelcomePage1.g.i.cs
+#	deleted:    IntTeTestat/obj/Debug/XapCacheFile.xml
+#	deleted:    IntTeTestat/obj/Release/App.g.cs
+#	deleted:    IntTeTestat/obj/Release/App.g.i.cs
+#	deleted:    IntTeTestat/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+#	deleted:    IntTeTestat/obj/Release/GameOverPage.g.cs
+#	deleted:    IntTeTestat/obj/Release/GameOverPage.g.i.cs
+#	deleted:    IntTeTestat/obj/Release/GamePage.g.cs
+#	deleted:    IntTeTestat/obj/Release/GamePage.g.i.cs
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.RiaClientRefs.txt
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.RiaFiles.txt
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.RiaLinks.txt
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.RiaServerRefs.txt
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.RiaSourceFiles.txt
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.csproj.FileListAbsolute.txt
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.dll
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.g.resources
+#	deleted:    IntTeTestat/obj/Release/IntTeTestat.pdb
+#	deleted:    IntTeTestat/obj/Release/MainPage.g.cs
+#	deleted:    IntTeTestat/obj/Release/MainPage.g.i.cs
+#	deleted:    IntTeTestat/obj/Release/TempPE/Service References.GuessServiceReference.Reference.cs.dll
+#	deleted:    IntTeTestat/obj/Release/WaitingPage.g.cs
+#	deleted:    IntTeTestat/obj/Release/WaitingPage.g.i.cs
+#	deleted:    IntTeTestat/obj/Release/WelcomePage.g.cs
+#	deleted:    IntTeTestat/obj/Release/WelcomePage.g.i.cs
+#	deleted:    IntTeTestat/obj/Release/XapCacheFile.xml
+#
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   IntTeTestat.Web/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   IntTeTestat.Web/obj/Debug/LiveIntellisense/Sources/IntTeTestat.Web.cs
+#	modified:   IntTeTestat.Web/obj/Debug/ResolveAssemblyReference.cache
+#	modified:   IntTeTestat.suo
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	IntTeTestat/Bin/Debug/System.ComponentModel.DataAnnotations.xml
+#	IntTeTestat/Bin/Debug/System.ServiceModel.Extensions.xml
+#	IntTeTestat/Bin/Debug/System.ServiceModel.PollingDuplex.xml
+#	IntTeTestat/Bin/Debug/System.ServiceModel.Web.Extensions.xml
+#	IntTeTestat/Bin/Debug/System.Windows.Controls.Data.Input.xml
+#	IntTeTestat/Bin/Debug/System.Windows.Controls.Navigation.xml
+#	IntTeTestat/Bin/Debug/System.Windows.Controls.xml
+#	status.txt

@@ -1,0 +1,23 @@
+﻿<navigation:Page x:Class="IntTeTestat.Finished" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="390" d:DesignHeight="300"
+           Title="Finished Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <Grid x:Name="LayoutRoot">
+        <sdk:Label Height="33" HorizontalAlignment="Left" Margin="12,12,0,0" Name="gameFinishedMessageLabel" VerticalAlignment="Top" Width="366" Content="{Binding FinishedMessage}" FontSize="16" />
+        <sdk:DataGrid AutoGenerateColumns="False" Height="174" HorizontalAlignment="Left" Margin="12,85,0,0" Name="historyDataGrid" VerticalAlignment="Top" Width="366" ItemsSource="{Binding Guesses}"  IsReadOnly="True" CanUserResizeColumns="True">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Binding="{Binding PlayerName}" Width="*" Header="Spieler"  />
+                <sdk:DataGridTextColumn Binding="{Binding Value}" Width="120" Header="Wert" />
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        
+        <Button Content="Nochmals spielen" Height="23" HorizontalAlignment="Left" Margin="260,265,0,0" Name="playAgainButton" VerticalAlignment="Top" Width="118" Click="playAgainButton_Click" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="130,51,0,0" Name="correctGuessLabel" Content="{Binding LastGuess.PlayerAndGuess}" VerticalAlignment="Top" Width="120" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="12,51,0,0" Name="correctLabel" VerticalAlignment="Top" Width="120" Content="Richtige Antwort von" />
+    </Grid>
+</navigation:Page>
