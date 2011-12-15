@@ -56,8 +56,20 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PlayerLeft">
+      <soap12:operation soapAction="urn:GuessService/PlayerLeft" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PlayerGuess">
       <soap12:operation soapAction="urn:GuessService/PlayerGuess" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hint">
+      <soap12:operation soapAction="urn:GuessService/Hint" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

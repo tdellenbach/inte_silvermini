@@ -11,18 +11,22 @@ namespace IntTeTestat.Web.Util
         Others
     }
 
-    [Serializable]
+ 
+    [DataContract]
     public class Guess
     {
-
         private Int32 _guessValue;
-
         private string _playerName;
 
         public Guess(Int32 guessValue, string playerName)
         {
             this._guessValue = guessValue;
             this._playerName = playerName;
+        }
+
+        public override string ToString()
+        {
+            return PlayerAndGuess;
         }
 
         [DataMember]
@@ -39,26 +43,35 @@ namespace IntTeTestat.Web.Util
             get { return this._playerName; }
         }
 
-        public GuessTipp GuessTip(Int32 target)
+        //public GuessTipp GetGuessTip(Int32 target)
+        //{
+        //    if (this._guessValue < target)
+        //    {
+        //        return GuessTipp.TooLow;
+        //    }
+        //    else if (this._guessValue > target)
+        //    {
+        //        return GuessTipp.TooHigh;
+        //    }
+        //    else if (this._guessValue == target)
+        //    {
+        //        return GuessTipp.Correct;
+        //    }
+        //    else
+        //    {
+        //        return GuessTipp.Others;
+        //    }
+        //}
+
+        [DataMember]
+        public string PlayerAndGuess
         {
-            if (this._guessValue < target)
-            {
-                return GuessTipp.TooLow;
-            }
-            else if (this._guessValue > target)
-            {
-                return GuessTipp.TooHigh;
-            }
-            else if (this._guessValue == target)
-            {
-                return GuessTipp.Correct;
-            }
-            else
-            {
-                return GuessTipp.Others;
-            }
+            get { return PlayerName + ": " + Convert.ToString(_guessValue); }
+            set { throw new NotImplementedException(); }
         }
 
+        [DataMember]
+        public GuessTipp Answer { get; set; }
     };
 
 }

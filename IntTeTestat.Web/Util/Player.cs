@@ -6,9 +6,7 @@ namespace IntTeTestat.Web.Util
     {
 
         private string _name;
-
         private IGuessService _guessService;
-
         private GuessGame _guessGame;
 
         public Player(string playerName, IGuessService guessService)

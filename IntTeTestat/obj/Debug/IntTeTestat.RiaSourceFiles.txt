@@ -1,1 +1,1 @@
-C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat.Web\IntTeTestat.Web.csproj,634595042667722902,GuessService.svc.cs,Properties\AssemblyInfo.cs,SilverlightFaultBehavior.cs,Util\Guess.cs,Util\GuessGame.cs,Util\Pair.cs,Util\Player.cs,
+D:\HSR\workspace\inte_silvermini\IntTeTestat.Web\IntTeTestat.Web.csproj,634595698325468750,GuessService.svc.cs,Properties\AssemblyInfo.cs,SilverlightFaultBehavior.cs,Util\Guess.cs,Util\GuessGame.cs,Util\Pair.cs,Util\Player.cs,

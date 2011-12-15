@@ -29,8 +29,14 @@
   <wsdl:message name="GuessService_ConnectCanceled_OutputCallbackMessage">
     <wsdl:part name="parameters" element="ConnectCanceled" />
   </wsdl:message>
+  <wsdl:message name="GuessService_PlayerLeft_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="PlayerLeft" />
+  </wsdl:message>
   <wsdl:message name="GuessService_PlayerGuess_OutputCallbackMessage">
     <wsdl:part name="parameters" element="PlayerGuess" />
+  </wsdl:message>
+  <wsdl:message name="GuessService_Hint_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="Hint" />
   </wsdl:message>
   <wsdl:portType name="GuessService">
     <wsdl:operation name="Conntect">
@@ -54,8 +60,14 @@
     <wsdl:operation name="ConnectCanceled">
       <wsdl:output wsaw:Action="urn:GuessService/ConnectCanceled" message="GuessService_ConnectCanceled_OutputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PlayerLeft">
+      <wsdl:output wsaw:Action="urn:GuessService/PlayerLeft" message="GuessService_PlayerLeft_OutputCallbackMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PlayerGuess">
       <wsdl:output wsaw:Action="urn:GuessService/PlayerGuess" message="GuessService_PlayerGuess_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hint">
+      <wsdl:output wsaw:Action="urn:GuessService/Hint" message="GuessService_Hint_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

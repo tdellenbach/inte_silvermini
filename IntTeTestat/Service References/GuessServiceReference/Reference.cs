@@ -18,52 +18,64 @@ namespace IntTeTestat.GuessServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Guess", Namespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<IntTeTestat.GuessServiceReference.Guess>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(IntTeTestat.GuessServiceReference.GuessTipp))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
     public partial class Guess : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string NameField;
+        private IntTeTestat.GuessServiceReference.GuessTipp AnswerField;
         
-        private IntTeTestat.GuessServiceReference.GuessTipp TippField;
+        private int GuessValueField;
         
-        private object ValueField;
+        private string PlayerAndGuessField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string Name {
+        private string PlayerNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public IntTeTestat.GuessServiceReference.GuessTipp Answer {
             get {
-                return this.NameField;
+                return this.AnswerField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((this.AnswerField.Equals(value) != true)) {
+                    this.AnswerField = value;
+                    this.RaisePropertyChanged("Answer");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public IntTeTestat.GuessServiceReference.GuessTipp Tipp {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GuessValue {
             get {
-                return this.TippField;
+                return this.GuessValueField;
             }
             set {
-                if ((this.TippField.Equals(value) != true)) {
-                    this.TippField = value;
-                    this.RaisePropertyChanged("Tipp");
+                if ((this.GuessValueField.Equals(value) != true)) {
+                    this.GuessValueField = value;
+                    this.RaisePropertyChanged("GuessValue");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public object Value {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlayerAndGuess {
             get {
-                return this.ValueField;
+                return this.PlayerAndGuessField;
             }
             set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
+                if ((object.ReferenceEquals(this.PlayerAndGuessField, value) != true)) {
+                    this.PlayerAndGuessField = value;
+                    this.RaisePropertyChanged("PlayerAndGuess");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlayerName {
+            get {
+                return this.PlayerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlayerNameField, value) != true)) {
+                    this.PlayerNameField = value;
+                    this.RaisePropertyChanged("PlayerName");
                 }
             }
         }
@@ -83,10 +95,10 @@ namespace IntTeTestat.GuessServiceReference {
     public enum GuessTipp : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ToLow = 0,
+        TooLow = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ToHeight = 1,
+        TooHigh = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Correct = 2,
@@ -110,7 +122,7 @@ namespace IntTeTestat.GuessServiceReference {
         void EndAddName(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="urn:GuessService/Guess")]
-        System.IAsyncResult BeginGuess(int value, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGuess(int value, string name, System.AsyncCallback callback, object asyncState);
         
         void EndGuess(System.IAsyncResult result);
         
@@ -127,13 +139,19 @@ namespace IntTeTestat.GuessServiceReference {
         void StartGame(System.Collections.ObjectModel.ObservableCollection<string> players, string playerName);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/GameOver")]
-        void GameOver(bool victory, System.Collections.ObjectModel.ObservableCollection<IntTeTestat.GuessServiceReference.Guess> playedValues);
+        void GameOver(bool victory);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/ConnectCanceled")]
         void ConnectCanceled();
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/PlayerLeft")]
+        void PlayerLeft(string name);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/PlayerGuess")]
         void PlayerGuess(IntTeTestat.GuessServiceReference.Guess guess);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="urn:GuessService/Hint")]
+        void Hint(IntTeTestat.GuessServiceReference.GuessTipp guessHint);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -268,7 +286,11 @@ namespace IntTeTestat.GuessServiceReference {
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ConnectCanceledReceived;
         
+        public event System.EventHandler<PlayerLeftReceivedEventArgs> PlayerLeftReceived;
+        
         public event System.EventHandler<PlayerGuessReceivedEventArgs> PlayerGuessReceived;
+        
+        public event System.EventHandler<HintReceivedEventArgs> HintReceived;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -365,8 +387,8 @@ namespace IntTeTestat.GuessServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IntTeTestat.GuessServiceReference.GuessService.BeginGuess(int value, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGuess(value, callback, asyncState);
+        System.IAsyncResult IntTeTestat.GuessServiceReference.GuessService.BeginGuess(int value, string name, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGuess(value, name, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -377,7 +399,8 @@ namespace IntTeTestat.GuessServiceReference {
         private System.IAsyncResult OnBeginGuess(object[] inValues, System.AsyncCallback callback, object asyncState) {
             this.VerifyCallbackEvents();
             int value = ((int)(inValues[0]));
-            return ((IntTeTestat.GuessServiceReference.GuessService)(this)).BeginGuess(value, callback, asyncState);
+            string name = ((string)(inValues[1]));
+            return ((IntTeTestat.GuessServiceReference.GuessService)(this)).BeginGuess(value, name, callback, asyncState);
         }
         
         private object[] OnEndGuess(System.IAsyncResult result) {
@@ -392,11 +415,11 @@ namespace IntTeTestat.GuessServiceReference {
             }
         }
         
-        public void GuessAsync(int value) {
-            this.GuessAsync(value, null);
+        public void GuessAsync(int value, string name) {
+            this.GuessAsync(value, name, null);
         }
         
-        public void GuessAsync(int value, object userState) {
+        public void GuessAsync(int value, string name, object userState) {
             if ((this.onBeginGuessDelegate == null)) {
                 this.onBeginGuessDelegate = new BeginOperationDelegate(this.OnBeginGuess);
             }
@@ -407,7 +430,8 @@ namespace IntTeTestat.GuessServiceReference {
                 this.onGuessCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGuessCompleted);
             }
             base.InvokeAsync(this.onBeginGuessDelegate, new object[] {
-                        value}, this.onEndGuessDelegate, this.onGuessCompletedDelegate, userState);
+                        value,
+                        name}, this.onEndGuessDelegate, this.onGuessCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -475,6 +499,13 @@ namespace IntTeTestat.GuessServiceReference {
             }
         }
         
+        private void OnPlayerLeftReceived(object state) {
+            if ((this.PlayerLeftReceived != null)) {
+                object[] results = ((object[])(state));
+                this.PlayerLeftReceived(this, new PlayerLeftReceivedEventArgs(results, null, false, null));
+            }
+        }
+        
         private void OnPlayerGuessReceived(object state) {
             if ((this.PlayerGuessReceived != null)) {
                 object[] results = ((object[])(state));
@@ -482,12 +513,21 @@ namespace IntTeTestat.GuessServiceReference {
             }
         }
         
+        private void OnHintReceived(object state) {
+            if ((this.HintReceived != null)) {
+                object[] results = ((object[])(state));
+                this.HintReceived(this, new HintReceivedEventArgs(results, null, false, null));
+            }
+        }
+        
         private void VerifyCallbackEvents() {
             if (((this.useGeneratedCallback != true) 
-                        && ((((this.StartGameReceived != null) 
+                        && ((((((this.StartGameReceived != null) 
                         || (this.GameOverReceived != null)) 
                         || (this.ConnectCanceledReceived != null)) 
-                        || (this.PlayerGuessReceived != null)))) {
+                        || (this.PlayerLeftReceived != null)) 
+                        || (this.PlayerGuessReceived != null)) 
+                        || (this.HintReceived != null)))) {
                 throw new System.InvalidOperationException("Callback events cannot be used when the callback InstanceContext is specified. Pl" +
                         "ease choose between specifying the callback InstanceContext or subscribing to th" +
                         "e callback events.");
@@ -579,19 +619,28 @@ namespace IntTeTestat.GuessServiceReference {
                             playerName});
             }
             
-            public void GameOver(bool victory, System.Collections.ObjectModel.ObservableCollection<IntTeTestat.GuessServiceReference.Guess> playedValues) {
+            public void GameOver(bool victory) {
                 this.proxy.OnGameOverReceived(new object[] {
-                            victory,
-                            playedValues});
+                            victory});
             }
             
             public void ConnectCanceled() {
                 this.proxy.OnConnectCanceledReceived(new object[0]);
             }
             
+            public void PlayerLeft(string name) {
+                this.proxy.OnPlayerLeftReceived(new object[] {
+                            name});
+            }
+            
             public void PlayerGuess(IntTeTestat.GuessServiceReference.Guess guess) {
                 this.proxy.OnPlayerGuessReceived(new object[] {
                             guess});
+            }
+            
+            public void Hint(IntTeTestat.GuessServiceReference.GuessTipp guessHint) {
+                this.proxy.OnHintReceived(new object[] {
+                            guessHint});
             }
         }
         
@@ -624,9 +673,10 @@ namespace IntTeTestat.GuessServiceReference {
                 base.EndInvoke("AddName", _args, result);
             }
             
-            public System.IAsyncResult BeginGuess(int value, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
+            public System.IAsyncResult BeginGuess(int value, string name, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
                 _args[0] = value;
+                _args[1] = name;
                 System.IAsyncResult _result = base.BeginInvoke("Guess", _args, callback, asyncState);
                 return _result;
             }
@@ -688,11 +738,21 @@ namespace IntTeTestat.GuessServiceReference {
                 return ((bool)(this.results[0]));
             }
         }
+    }
+    
+    public class PlayerLeftReceivedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
-        public System.Collections.ObjectModel.ObservableCollection<IntTeTestat.GuessServiceReference.Guess> playedValues {
+        private object[] results;
+        
+        public PlayerLeftReceivedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string name {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<IntTeTestat.GuessServiceReference.Guess>)(this.results[1]));
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -710,6 +770,23 @@ namespace IntTeTestat.GuessServiceReference {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((IntTeTestat.GuessServiceReference.Guess)(this.results[0]));
+            }
+        }
+    }
+    
+    public class HintReceivedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public HintReceivedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public IntTeTestat.GuessServiceReference.GuessTipp guessHint {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((IntTeTestat.GuessServiceReference.GuessTipp)(this.results[0]));
             }
         }
     }

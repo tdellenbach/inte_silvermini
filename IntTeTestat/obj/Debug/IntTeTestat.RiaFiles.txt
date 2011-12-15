@@ -1,1 +1,1 @@
-C:\Users\pangody\Documents\cvswork\IntTe\Miniprojekt2\inte_silvermini\IntTeTestat\Generated_Code\IntTeTestat.Web.g.cs
+D:\HSR\workspace\inte_silvermini\IntTeTestat\Generated_Code\IntTeTestat.Web.g.cs

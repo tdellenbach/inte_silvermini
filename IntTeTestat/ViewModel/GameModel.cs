@@ -19,14 +19,11 @@ namespace IntTeTestat.ViewModel
         
         public GameModel()
         {
+            _players = new ObservableCollection<string>();
+            _guesses = new ObservableCollection<Guess>();
+            _guessTip = GuessTipp.Others;
             this._players.CollectionChanged += HandlePlayersChange;
             this._guesses.CollectionChanged += HandleGuessesChange;
-        }
-
-        public string GameName
-        {
-            set { this._gameName = value; }
-            get { return this._gameName; }
         }
 
         public ObservableCollection<string> Players
@@ -41,7 +38,13 @@ namespace IntTeTestat.ViewModel
             get { return this._guesses; }
         }
 
-        public Guess CurrentGuess
+        public string GameName
+        {
+            set { this._gameName = value; }
+            get { return this._gameName; }
+        }
+
+        public Guess LastGuess
         {
             get
             {
@@ -57,10 +60,36 @@ namespace IntTeTestat.ViewModel
             }
         }
 
-        public GuessTipp GuessTip
+        public string FinishedMessage { get; set; }
+
+        public GuessTipp Hint
         {
-            set { this._guessTip = value; SendPropertyChanged("GuessTip"); }
-            get { return this._guessTip; }
+            get
+            {
+                return _guessTip;
+            }
+            set
+            {
+                _guessTip = value;
+                SendPropertyChanged("Answer");
+            }
+        }
+
+        public string Answer
+        {
+            get
+            {
+                switch (Hint)
+                {
+                    case GuessTipp.TooHigh:
+                        return "Zu hoch!";
+
+                    case GuessTipp.TooLow:
+                        return "Zu tief!";
+
+                    default: return "";
+                }
+            }
         }
 
         private void HandlePlayersChange(object sender, NotifyCollectionChangedEventArgs e)
