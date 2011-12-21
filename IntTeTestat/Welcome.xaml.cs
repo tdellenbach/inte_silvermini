@@ -10,25 +10,29 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
+using IntTeTestat.GuessServiceReference;
 
 namespace IntTeTestat
 {
-    public partial class Welcome : Page
+    public partial class Welcome : UserControl
     {
+        private MainPage mainPage;
         public Welcome()
         {
             InitializeComponent();
+            GuessServiceClient serviceClient = WebContext.Current.GuessServiceClient;
+        }
+        public Welcome(MainPage parent)
+        {
+            InitializeComponent();
+            mainPage = parent;
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/PickName", UriKind.Relative));
+            PickName pick = new PickName(mainPage);
+            mainPage.ContentFrame.Content = pick;
+            //NavigationService.Navigate(new Uri("/PickName", UriKind.Relative));
         }
-
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
-
     }
 }

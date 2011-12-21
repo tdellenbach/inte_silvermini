@@ -13,23 +13,26 @@ using System.Windows.Navigation;
 
 namespace IntTeTestat
 {
-    public partial class WaitPage : Page
+    public partial class WaitPage : UserControl
     {
+        private MainPage mainPage;
         public WaitPage()
         {
             InitializeComponent();
             sbStar.Begin();
         }
-
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        public WaitPage(MainPage mp)
         {
+            InitializeComponent();
+            mainPage = mp;
+            sbStar.Begin();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             WebContext.Current.GuessServiceClient.QuitConnectAsync();
-            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
+            mainPage.ContentFrame.Content = new Info(mainPage);
+            //NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
         }
     }
 }

@@ -35,9 +35,6 @@
   <wsdl:message name="GuessService_PlayerGuess_OutputCallbackMessage">
     <wsdl:part name="parameters" element="PlayerGuess" />
   </wsdl:message>
-  <wsdl:message name="GuessService_Hint_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="Hint" />
-  </wsdl:message>
   <wsdl:portType name="GuessService">
     <wsdl:operation name="Conntect">
       <wsdl:input wsaw:Action="urn:GuessService/Conntect" message="GuessService_Conntect_InputMessage" />
@@ -65,9 +62,6 @@
     </wsdl:operation>
     <wsdl:operation name="PlayerGuess">
       <wsdl:output wsaw:Action="urn:GuessService/PlayerGuess" message="GuessService_PlayerGuess_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Hint">
-      <wsdl:output wsaw:Action="urn:GuessService/Hint" message="GuessService_Hint_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

@@ -1,54 +1,49 @@
-﻿<sdk:Page 
+﻿<UserControl x:Class="IntTeTestat.WaitPage"
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
-           xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
-           xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" x:Class="IntTeTestat.WaitPage"
            mc:Ignorable="d"
            d:DesignWidth="390" d:DesignHeight="300">
-    <sdk:Page.Resources>
+    <UserControl.Resources>
         <Storyboard x:Name="sbStar" RepeatBehavior="Forever">
-    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="regularPolygon">
-    			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="180"/>
-    			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="360"/>
-    		</DoubleAnimationUsingKeyFrames>
-    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="regularPolygon">
-    			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.82"/>
-    			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
-    		</DoubleAnimationUsingKeyFrames>
-    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="regularPolygon">
-    			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.82"/>
-    			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
-    		</DoubleAnimationUsingKeyFrames>
-    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="regularPolygon">
-    			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
-    			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
-    		</DoubleAnimationUsingKeyFrames>
-    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="regularPolygon">
-    			<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
-    			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
-    		</DoubleAnimationUsingKeyFrames>
-    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="regularPolygon">
-    			<EasingColorKeyFrame KeyTime="0:0:1" Value="Black"/>
-    			<EasingColorKeyFrame KeyTime="0:0:2" Value="#FFFFDE00"/>
-    		</ColorAnimationUsingKeyFrames>
-    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="regularPolygon">
-    			<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFFFEA0B"/>
-    			<EasingColorKeyFrame KeyTime="0:0:2" Value="Black"/>
-    		</ColorAnimationUsingKeyFrames>
-    	</Storyboard>
-    </sdk:Page.Resources>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.8">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.2">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.8">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.2">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    
     <Canvas x:Name="LayoutRoot">
-        <!--<ed:RegularPolygon x:Name="regularPolygon" Height="100" InnerRadius="0.47211" Canvas.Left="143" PointCount="5" Stretch="Fill" Stroke="Black" StrokeThickness="2" Canvas.Top="86" UseLayoutRounding="False" Width="100" RenderTransformOrigin="0.5,0.5" Fill="#FFFFDE00">
-        	<ed:RegularPolygon.RenderTransform>
-        		<CompositeTransform/>
-        	</ed:RegularPolygon.RenderTransform>
-        </ed:RegularPolygon>-->
+        <Image x:Name="image" Margin="22,48,34,35" Source="Images/batman-transparentpng.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform/>
+            </Image.RenderTransform>
+        </Image>
         <TextBlock Canvas.Left="120" Canvas.Top="231" Height="23" Name="textBlock1" Text="Warte auf weitere Spieler..." Width="163" />
         <TextBlock Canvas.Left="10" Canvas.Top="10" FontSize="16" Height="24" Name="titleTextBlock" Text="Nicht genügend Spieler vorhanden" TextWrapping="Wrap" Width="366" />
         <Button Canvas.Left="303" Canvas.Top="261" Content="Abbrechen" Height="23" Name="cancelButton" Width="75" Click="cancelButton_Click" />
     </Canvas>
-</sdk:Page>
+</UserControl>

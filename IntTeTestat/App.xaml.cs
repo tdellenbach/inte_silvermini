@@ -27,14 +27,6 @@ namespace IntTeTestat
             InitializeComponent();
         }
 
-        public MainPage MainPage
-        {
-            get
-            {
-                return (MainPage)this.RootVisual;
-            }
-        }
-
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             this.RootVisual = new MainPage();

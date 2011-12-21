@@ -1,1 +1,1 @@
-D:\HSR\workspace\inte_silvermini\IntTeTestat.Web\IntTeTestat.Web.csproj,634595698325468750,GuessService.svc.cs,Properties\AssemblyInfo.cs,SilverlightFaultBehavior.cs,Util\Guess.cs,Util\GuessGame.cs,Util\Pair.cs,Util\Player.cs,
+D:\HSR\workspace\inte_silvermini\IntTeTestat.Web\IntTeTestat.Web.csproj,634599416199687500,GuessService.svc.cs,Properties\AssemblyInfo.cs,SilverlightFaultBehavior.cs,Util\GameManager.cs,Util\Guess.cs,Util\GuessGame.cs,Util\Pair.cs,Util\Player.cs,

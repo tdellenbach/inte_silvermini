@@ -1,5 +1,5 @@
-﻿<xapCache source="D:\HSR\workspace\inte_silvermini\IntTeTestat\Bin\Debug\IntTeTestat.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="15.12.2011 19:01:07">
-  <file source="D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\IntTeTestat.dll" archivePath="IntTeTestat.dll" lastWriteTime="15.12.2011 19:01:02" />
+﻿<xapCache source="D:\HSR\workspace\inte_silvermini\IntTeTestat\Bin\Debug\IntTeTestat.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="21.12.2011 03:28:15">
+  <file source="D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\IntTeTestat.dll" archivePath="IntTeTestat.dll" lastWriteTime="21.12.2011 03:28:09" />
   <file source="c:\Programme\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" archivePath="System.ComponentModel.DataAnnotations.dll" lastWriteTime="26.08.2010 03:17:48" />
   <file source="c:\Programme\Microsoft SDKs\RIA Services\v1.0\Libraries\Silverlight\System.ServiceModel.DomainServices.Client.dll" archivePath="System.ServiceModel.DomainServices.Client.dll" lastWriteTime="06.05.2010 15:24:00" />
   <file source="c:\Programme\Microsoft SDKs\RIA Services\v1.0\Libraries\Silverlight\System.ServiceModel.DomainServices.Client.Web.dll" archivePath="System.ServiceModel.DomainServices.Client.Web.dll" lastWriteTime="06.05.2010 15:23:58" />
@@ -12,5 +12,5 @@
   <file source="c:\Programme\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="26.08.2010 03:17:48" />
   <file source="c:\Programme\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="26.08.2010 03:17:48" />
   <file source="D:\HSR\workspace\inte_silvermini\IntTeTestat\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="24.11.2011 15:27:19" />
-  <file source="D:\HSR\workspace\inte_silvermini\IntTeTestat\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="15.12.2011 17:59:17" />
+  <file source="D:\HSR\workspace\inte_silvermini\IntTeTestat\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="21.12.2011 01:40:25" />
 </xapCache>

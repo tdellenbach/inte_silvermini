@@ -13,75 +13,77 @@ using System.Windows.Shapes;
 using System.ServiceModel;
 using IntTeTestat.GuessServiceReference;
 using IntTeTestat.ViewModel;
+using System.Collections.ObjectModel;
 
 namespace IntTeTestat
 {
     public partial class MainPage : UserControl
     {
-        GameModel gameModel;
+        private GameContext context;
+
         public MainPage()
         {
             InitializeComponent();
-            gameModel = new GameModel();
-            ContentFrame.DataContext = gameModel;
+            GuessServiceClient serviceClient = WebContext.Current.GuessServiceClient;
 
-            WebContext.Current.GuessServiceClient.StartGameReceived += OnStartGameReceived;
-            WebContext.Current.GuessServiceClient.PlayerGuessReceived += OnPlayerGuessReceived;
-            WebContext.Current.GuessServiceClient.GameOverReceived += OnGameOverReceived;
-            WebContext.Current.GuessServiceClient.HintReceived += OnHintReceived;
-            WebContext.Current.GuessServiceClient.QuitConnectCompleted += OnQuitConnectCompleted;
-            WebContext.Current.GuessServiceClient.PlayerLeftReceived += OnPlayerLeftReceived;
+            serviceClient.StartGameReceived += OnStartGameReceived;
+            serviceClient.GameOverReceived += OnGameOverReceived;
+            serviceClient.ConnectCanceledReceived += OnConnectCanceledRecieved;
 
-            ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
+            ContentFrame.Content = new Info(this);
         }
 
-        private void OnPlayerLeftReceived(object sender, PlayerLeftReceivedEventArgs e)
+        public GameContext GameContext
         {
-            gameModel.Players.Remove(e.name);
-        }
-
-        private void OnQuitConnectCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            
-            ContentFrame.Navigate(new Uri("/Welcome", UriKind.Relative));
-        }
-
-        private void OnPlayerGuessReceived(object sender, PlayerGuessReceivedEventArgs e)
-        {
-            gameModel.Guesses.Add(e.guess);
-        }
-
-        private void OnHintReceived(object sender, HintReceivedEventArgs e)
-        {
-            gameModel.Hint = e.guessHint;
+            get
+            {
+                if (context == null)
+                {
+                    context = new GameContext();
+                }
+                return context;
+            }
+            set
+            {
+                context = value;
+            }
         }
        
         private void OnStartGameReceived(object sender, StartGameReceivedEventArgs e)
         {
-            gameModel.Players = e.players;
-            gameModel.Guesses.Clear();
-            gameModel.Hint = GuessTipp.Others;
-            gameModel.FinishedMessage = "";
-
-            ContentFrame.Navigate(new Uri("/Game", UriKind.Relative));
+            GameContext.Name = e.playerName;
+            GameContext.Players = e.players;
+            Game game = new Game(this);
+            game.DataContext = GameContext;
+            ContentFrame.Content = game;
+            //ContentFrame.Navigate(new Uri("/GuessGame", UriKind.Relative));
         }
 
         private void OnGameOverReceived(object sender, GameOverReceivedEventArgs e)
         {
-            if (e.victory)
+            GameContext.Victory = e.victory;
+            ObservableCollection<GuessServiceReference.Guess> played = e.playedValues;
+            ObservableCollection<GuessEntrie> endResult = new ObservableCollection<GuessEntrie>();
+
+            foreach (GuessServiceReference.Guess guess in played)
             {
-                gameModel.FinishedMessage = "Sie haben gewonnen!";
+                IntTeTestat.GuessEntrie.EndResultEntrie entrie = new IntTeTestat.GuessEntrie.EndResultEntrie();
+                entrie.Name = guess._playerName;
+                entrie.Guess = guess._guessValue;
+                endResult.Add(entrie);
             }
-            else
-            {
-                gameModel.FinishedMessage = "Sie haben verloren!";
-            }
-            ContentFrame.Navigate(new Uri("/Finished", UriKind.Relative));
+
+            GameContext.PlayedValues = endResult;
+            
+            Finished endpage = new Finished(this);
+            endpage.DataContext = GameContext;
+            ContentFrame.Content = endpage;
         }
 
-
-        private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
+        private void OnConnectCanceledRecieved(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
+            ContentFrame.Content = new WaitPage();
+            //ContentFrame.Navigate(new Uri("/WaitPage", UriKind.Relative));
         }
     }
 
@@ -96,8 +98,7 @@ namespace IntTeTestat
         public GuessServiceClient GuessServiceClient
         {
             get
-            {
-                
+            {       
                 if (_proxy == null)
                 {
                     EndpointAddress address = new EndpointAddress("http://localhost:1701/GuessService.svc");

@@ -68,12 +68,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Hint">
-      <soap12:operation soapAction="urn:GuessService/Hint" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="GuessService">
     <wsdl:port name="PollingDuplexHttpBinding_GuessService" binding="tns:PollingDuplexHttpBinding_GuessService">

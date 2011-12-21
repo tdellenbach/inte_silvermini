@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SilverlightFaultBehavior.cs" />
+    <Compile Include="Util\GameManager.cs" />
     <Compile Include="Util\Guess.cs" />
     <Compile Include="Util\GuessGame.cs" />
     <Compile Include="Util\Pair.cs" />

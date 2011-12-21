@@ -13,21 +13,25 @@ using System.Windows.Navigation;
 
 namespace IntTeTestat
 {
-    public partial class Finished : Page
+    public partial class Finished : UserControl
     {
+        private MainPage mainPage;
         public Finished()
         {
             InitializeComponent();
         }
 
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        public Finished(MainPage mp)
         {
+            InitializeComponent();
+            mainPage = mp;
         }
 
         private void playAgainButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Welcome", UriKind.Relative));
+            mainPage.GameContext = null;
+            Info startPage = new Info(mainPage);
+            mainPage.ContentFrame.Content = startPage;
         }
 
     }

@@ -5,43 +5,39 @@ namespace IntTeTestat.Web.Util
 {
     public enum GuessTipp
     {
-        TooLow,
-        TooHigh,
+        ToLow,
+        ToHigh,
         Correct,
         Others
     }
 
- 
-    [DataContract]
+    //[DataContract]
+    [Serializable]
     public class Guess
     {
-        private Int32 _guessValue;
+        private string _guessValue;
         private string _playerName;
 
-        public Guess(Int32 guessValue, string playerName)
+        public Guess(string guessValue, string playerName)
         {
             this._guessValue = guessValue;
             this._playerName = playerName;
         }
 
-        public override string ToString()
-        {
-            return PlayerAndGuess;
-        }
+        public GuessTipp Tipp { set; get; }
 
-        [DataMember]
-        public Int32 GuessValue
-        {
-            set { this._guessValue = value; }
-            get { return this._guessValue; }
-        }
+        //public String GuessValue
+        //{
+        //    set { this._guessValue = value; }
+        //    get { return this._guessValue; }
+        //}
 
-        [DataMember]
-        public string PlayerName
-        {
-            set { this._playerName = value; }
-            get { return this._playerName; }
-        }
+        //[DataMember]
+        //public string PlayerName
+        //{
+        //    set { this._playerName = value; }
+        //    get { return this._playerName; }
+        //}
 
         //public GuessTipp GetGuessTip(Int32 target)
         //{
@@ -63,15 +59,14 @@ namespace IntTeTestat.Web.Util
         //    }
         //}
 
-        [DataMember]
-        public string PlayerAndGuess
-        {
-            get { return PlayerName + ": " + Convert.ToString(_guessValue); }
-            set { throw new NotImplementedException(); }
-        }
+        //[DataMember]
+        //public string PlayerAndGuess
+        //{
+        //    get { return PlayerName + ": " + Convert.ToString(_guessValue); }
+        //    set { throw new NotImplementedException(); }
+        //}
 
-        [DataMember]
-        public GuessTipp Answer { get; set; }
-    };
-
+        //[DataMember]
+        //public GuessTipp Answer { get; set; }
+    }
 }

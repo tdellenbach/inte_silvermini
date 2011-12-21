@@ -91,6 +91,11 @@
     <Compile Include="Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameContext.cs" />
+    <Compile Include="GuessEntrie.cs" />
+    <Compile Include="Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PickName.xaml.cs">
       <DependentUpon>PickName.xaml</DependentUpon>
     </Compile>
@@ -124,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Info.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PickName.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,6 +161,7 @@
       <SubType>Designer</SubType>
     </None>
     <Resource Include="Images\HsrLogo.jpg" />
+    <Resource Include="Images\batman-transparentpng.png" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>

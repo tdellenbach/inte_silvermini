@@ -2,6 +2,7 @@ D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\ResolveAssemblyReference.
 D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\App.g.i.cs
 D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\Finished.g.i.cs
 D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\Game.g.i.cs
+D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\Info.g.i.cs
 D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\PickName.g.i.cs
 D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\WaitPage.g.i.cs
 D:\HSR\workspace\inte_silvermini\IntTeTestat\obj\Debug\Welcome.g.i.cs

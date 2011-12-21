@@ -7,7 +7,6 @@ namespace IntTeTestat.Web.Util
 
         private string _name;
         private IGuessService _guessService;
-        private GuessGame _guessGame;
 
         public Player(string playerName, IGuessService guessService)
         {
@@ -23,16 +22,8 @@ namespace IntTeTestat.Web.Util
 
         public IGuessService GuessService
         {
-            set { this._guessService = value; }
             get { return this._guessService; }
         }
-
-        public GuessGame GuessGame
-        {
-            set { this._guessGame = value; }
-            get { return this._guessGame; }
-        }
-
     }
 
 }

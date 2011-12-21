@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IntTeTestat.Web.Util" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfGuess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Guess" nillable="true" type="tns:Guess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuess" nillable="true" type="tns:ArrayOfGuess" />
   <xs:complexType name="Guess">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Answer" type="tns:GuessTipp" />
-      <xs:element minOccurs="0" name="GuessValue" type="xs:int" />
-      <xs:element minOccurs="0" name="PlayerAndGuess" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlayerName" nillable="true" type="xs:string" />
+      <xs:element name="_guessValue" nillable="true" type="xs:string" />
+      <xs:element name="_playerName" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Tipp_x003E_k__BackingField" type="tns:GuessTipp" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Guess" nillable="true" type="tns:Guess" />
   <xs:simpleType name="GuessTipp">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="TooLow" />
-      <xs:enumeration value="TooHigh" />
+      <xs:enumeration value="ToLow" />
+      <xs:enumeration value="ToHigh" />
       <xs:enumeration value="Correct" />
       <xs:enumeration value="Others" />
     </xs:restriction>
