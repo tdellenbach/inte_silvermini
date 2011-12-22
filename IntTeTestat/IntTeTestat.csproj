@@ -162,6 +162,7 @@
     </None>
     <Resource Include="Images\HsrLogo.jpg" />
     <Resource Include="Images\batman-transparentpng.png" />
+    <Resource Include="Images\sanduhr.jpg" />
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>

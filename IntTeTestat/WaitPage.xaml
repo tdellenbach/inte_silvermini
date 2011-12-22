@@ -7,43 +7,28 @@
            d:DesignWidth="390" d:DesignHeight="300">
     <UserControl.Resources>
         <Storyboard x:Name="sbStar" RepeatBehavior="Forever">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="image">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0.2"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.8">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <BackEase EasingMode="EaseInOut"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.2">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <BackEase EasingMode="EaseInOut"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="image">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0.2"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.8">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <BackEase EasingMode="EaseInOut"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.2">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <BackEase EasingMode="EaseInOut"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="image">
+        		<EasingDoubleKeyFrame KeyTime="0:0:2" Value="180"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:4" Value="180"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0"/>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="image">
+        		<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:4" Value="180"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:6" Value="180"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+        	</DoubleAnimationUsingKeyFrames>
+    	</Storyboard>
     </UserControl.Resources>
     
     <Canvas x:Name="LayoutRoot">
-        <Image x:Name="image" Margin="22,48,34,35" Source="Images/batman-transparentpng.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <CompositeTransform/>
-            </Image.RenderTransform>
+        <Image x:Name="image" Source="/IntTeTestat;component/Images/sanduhr.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MinHeight="0" Width="80" Canvas.Left="150" Canvas.Top="80">
+        	<Image.Projection>
+        		<PlaneProjection/>
+        	</Image.Projection>
         </Image>
         <TextBlock Canvas.Left="120" Canvas.Top="231" Height="23" Name="textBlock1" Text="Warte auf weitere Spieler..." Width="163" />
-        <TextBlock Canvas.Left="10" Canvas.Top="10" FontSize="16" Height="24" Name="titleTextBlock" Text="Nicht genügend Spieler vorhanden" TextWrapping="Wrap" Width="366" />
+        <TextBlock Canvas.Left="50" Canvas.Top="12" FontSize="16" Height="24" Name="titleTextBlock" Text="Nicht genügend Spieler vorhanden" TextWrapping="Wrap" Width="291" />
         <Button Canvas.Left="303" Canvas.Top="261" Content="Abbrechen" Height="23" Name="cancelButton" Width="75" Click="cancelButton_Click" />
     </Canvas>
 </UserControl>

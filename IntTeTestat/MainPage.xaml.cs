@@ -19,7 +19,7 @@ namespace IntTeTestat
 {
     public partial class MainPage : UserControl
     {
-        private GameContext context;
+        public GameContext context;
 
         public MainPage()
         {
@@ -56,7 +56,6 @@ namespace IntTeTestat
             Game game = new Game(this);
             game.DataContext = GameContext;
             ContentFrame.Content = game;
-            //ContentFrame.Navigate(new Uri("/GuessGame", UriKind.Relative));
         }
 
         private void OnGameOverReceived(object sender, GameOverReceivedEventArgs e)
@@ -83,7 +82,6 @@ namespace IntTeTestat
         private void OnConnectCanceledRecieved(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             ContentFrame.Content = new WaitPage();
-            //ContentFrame.Navigate(new Uri("/WaitPage", UriKind.Relative));
         }
     }
 
